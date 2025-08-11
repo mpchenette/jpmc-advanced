@@ -1,6 +1,6 @@
 # Task Management API
 
-A comprehensive task management REST API built with Spring Boot, designed to demonstrate GitHub Copilot capabilities in Java development.
+A comprehensive task management REST API built with Java, Maven and Spring Boot.
 
 ## Features
 
