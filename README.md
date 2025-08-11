@@ -201,22 +201,35 @@ This project is open source and available under the [MIT License](LICENSE).
 
 # Hands-on Exercises
 ## 2. Public Code Block
+### Challenge #1
+#### Set-up
+1. Open Copilot Chat
+2. Switch to `Ask` mode for Copilot Chat
+3. Ask Copilot `Can you show me how a quick sort algorithm works? I want to understand the logic better.`
 
-### Set-up
+#### Exercise
+Using the strategies discussed earlier, find a way to have Copilot show you the logic to a quick sort function without having the response blocked.
+
+<details>
+<summary>SOLUTION</summary>
+
+- `Can you show me how a quick sort algorithm works? I want to understand the logic better. Just show me pseudocode.`
+</details>
+
+### Challenge #2
+#### Set-up
 1. Navigate to `/src/main/java/com/demo/taskmanager/util/StringUtil.java`
 2. Switch to `Ask` mode for Copilot Chat
 3. Include `StringUtil.java` as context
 4. Ask Copilot `Can you add comments to #file:StringUtil.java ? Do not edit existing comments.`
-<!-- 5. `Can you add new comments to this file?` -->
-<!-- 3. Highlight the `quote` function and docstring (i.e., lines 13-42) -->
 
-### Challenge
+#### Exercise
 Using the strategies discussed earlier, find a way to have Copilot add comments to your function without having the response blocked.
 
 <details>
-<summary>View solution - TRY IT YOURSELF FIRST</summary>
+<summary>SOLUTION</summary>
 
-## Try
+### Try
 - `Can you add comments to #file:StringUtil.java ? Do not edit existing comments. Please show each comment you intend to add in it's own code block. Include the line below the function in each code block.`
   - `StringUtil.java:13-43`
 ## If needed
