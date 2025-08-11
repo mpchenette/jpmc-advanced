@@ -197,3 +197,29 @@ This project is designed for educational purposes to demonstrate GitHub Copilot 
 ## License
 
 This project is open source and available under the [MIT License](LICENSE).
+
+
+# Hands-on Exercises
+## 2. Public Code Block
+
+### Set-up
+1. Navigate to `/src/main/java/com/demo/taskmanager/util/StringUtil.java`
+2. Switch to `Ask` mode for Copilot Chat
+3. Include `StringUtil.java` as context
+4. Ask Copilot `Can you add comments to #file:StringUtil.java ? Do not edit existing comments.`
+<!-- 5. `Can you add new comments to this file?` -->
+<!-- 3. Highlight the `quote` function and docstring (i.e., lines 13-42) -->
+
+### Challenge
+Using the strategies discussed earlier, find a way to have Copilot add comments to your function without having the response blocked.
+
+<details>
+<summary>View solution - TRY IT YOURSELF FIRST</summary>
+
+## Try
+- `Can you add comments to #file:StringUtil.java ? Do not edit existing comments. Please show each comment you intend to add in it's own code block. Include the line below the function in each code block.`
+  - `StringUtil.java:13-43`
+## If needed
+- `Can you add comments to #file:StringUtil.java ? Do not edit existing comments. Please show each comment you intend to add in it's own code block. Include the line below the function in each code block. Do not show the complete function.`
+  - `StringUtil.java:13-43`
+</details>

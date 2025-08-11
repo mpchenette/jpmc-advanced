@@ -1,15 +1,9 @@
 package com.demo.taskmanager.util;
 
-/**
- * Utility class for common string operations.
- */
+@SuppressWarnings("checkstyle:NoMultipleClosingBracesAtEndOfLine")
+@AllowedToUseApacheCommonsLang3("There is no equivalent in Google's Guava")
+@AllowedToUseLogic("OS.NewLine is most basic")
 public class StringUtil {
-
-    // Private constructor to prevent instantiation
-    private StringUtil() {
-        throw new IllegalStateException("Utility class");
-    }
-
     /**
      * Quote special characters.
      *
