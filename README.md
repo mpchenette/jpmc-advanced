@@ -33,11 +33,6 @@ mvn spring-boot:run
 
 3. Access the API at `http://localhost:8080/api/tasks`
 
-4. View the H2 database console at `http://localhost:8080/h2-console`
-   - JDBC URL: `jdbc:h2:mem:taskdb`
-   - Username: `sa`
-   - Password: (leave blank)
-
 ## API Endpoints
 
 ### Task Operations
@@ -191,22 +186,9 @@ This project demonstrates several GitHub Copilot capabilities:
 - **Mockito**: Mocking framework
 - **Java 17**: Programming language
 
-## Database Schema
+## Data Persistence
 
-The application automatically creates the following table structure:
-
-```sql
-CREATE TABLE tasks (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    description TEXT,
-    completed BOOLEAN NOT NULL DEFAULT FALSE,
-    created_date TIMESTAMP NOT NULL,
-    due_date TIMESTAMP,
-    priority VARCHAR(10) NOT NULL DEFAULT 'MEDIUM',
-    category VARCHAR(100)
-);
-```
+The application uses an embedded database that automatically initializes when the application starts. All data is stored in memory during runtime, making it perfect for development and testing without requiring any database setup or configuration.
 
 ## Contributing
 
