@@ -6,8 +6,8 @@
 #### Set-up
 1. Open Copilot Chat
 1. Switch to `Agent` mode for Copilot Chat
-1. Ask Copilot to `Create a new API endpoint to duplicate an existing task`
-1. Observe Copilot approach to implementing the new endpoint
+1. Ask Copilot to `Create a new API endpoint to duplicate an existing task.`
+1. Observe Copilot's approach to implementing the new endpoint. What does it do? What does it not do?
 1. `Undo` any changes suggested by Copilot
 
 #### Exercise
@@ -25,11 +25,11 @@ Add something similar to the following line to `.github/copilot-instructions.md`
 </details>
 
 #### Follow-up
-Q: Given what we learned earlier, which feature might be a better fit for this type of information in the future?
+Q: Given what we learned today, which feature might be a better fit for this type of task in the future?
 
 <details>
 <summary>ANSWER</summary>
-Prompt files
+<a href="https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental">Prompt files</a>
 </details>
 
 <!-- Q: What other approaches could we take with custom instructions to achieve the same task in a different way? A: TDD -->
@@ -38,7 +38,7 @@ Prompt files
 ### Challenge #2
 #### Set-up
 1. Open Copilot Chat
-1. Switch to `Agent` mode in Copilot Chat
+1. Switch to `Agent` mode for Copilot Chat
 1. Ask Copilot to `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I'm looking to fix any vulnerabilities I can find.`
    - Q: What do you notice about `Agent` mode's behavior? Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
 1. Stop Copilot if necessary and `Undo` any suggested changes
@@ -50,9 +50,8 @@ Using custom instructions, modify Copilot's behavior such that Copilot does not 
 <summary>SOLUTION</summary>
 
 Add something similar to the following line to `.github/copilot-instructions.md`:
-- `Do not make any code changes without first asking permission. You need explicitly approval before modifying any code in this repository.`
+- `Do not make any code changes without first asking permission. You need explicit approval before modifying any code in this repository.`
 </details>
-
 
 #### Follow-up
 Take a minute to explore the [awesome-copilot](https://github.com/github/awesome-copilot) repo. What stands out? What do you notice about the types of custom instructions (and other customization options) shared there? What ideas does awesome-copilot give you about how you can supercharge your own project's custom instructions approach?
@@ -66,13 +65,13 @@ You work at XYZ Company. At XYZ, there are common standards and expectations tha
 
 #### Set-up
 1. Open Copilot Chat
-1. Switch to `Edit` mode for Copilot Chat
-1. Ask Copilot `Can you generate a markdown file documenting ___?`
+1. Switch to `Agent` mode for Copilot Chat
+1. Ask Copilot `Can you modify #file:ABOUT_THE_APP.md to add a more robust description about what this project is? Can you also add a new section: "Future Enhancements" outlining things that should be worked on soon?`
 1. Observe the changes suggested by `Edit` mode. Do not accept them.
 1. `Undo` the suggested changes
 
 #### Exercise
-Using custom instructions, modify Copilot's behavior such that the same prompt (i.e., `Can you generate a markdown file documenting ___?`), generates a do
+Using custom instructions, modify Copilot's behavior such that the same prompt (i.e., `Can you modify #file:ABOUT_THE_APP.md to add a more robust description about what this project is? Can you also add a new section: "Future Enhancements" outlining things that should be worked on soon?`), follows the standards outlined above.
 
 <details>
 <summary>SOLUTION</summary>
@@ -83,11 +82,10 @@ Add the following lines to `.github/copilot-instructions.md`:
 - `Any changes to existing documentation must include a "WHAT/WHY:" label immediately below any changes outlining what change is being made and why it is needed.`
 </details>
 
-
 #### Follow-up
 Which type of custom instruction file did you use? Why? Would you have been able to achieve the same result with the other type of custom instruction file? What would use of the other custom instruction file type have looked like?
 
-## 2. Workspace Knowledge + Copilot Code Review
+## 2. Workspace knowledge + Copilot code review
 ### Challenge #1
 #### Set-up
 1. Click on the Copilot icon at the bottom right of the VS Code window
