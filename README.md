@@ -4,41 +4,58 @@
 ## 1. Copilot Customization
 ### Challenge #1
 #### Set-up
-1. Navigate to ``
-2. Open Copilot Chat
-3. Switch to `Agent` mode for Copilot Chat
-``` md
-Controllers must accept Spring Data Pageable and return Page<DTO>. 
-Never return entities from controllers; use TaskDto + MapStruct mapper.
-Always support sort via `sort` query parameter.
-```
+1. Open Copilot Chat
+1. Switch to `Agent` mode for Copilot Chat
+1. Ask Copilot to `Create a new API endpoint to duplicate an existing task`
+1. Observe Copilot approach to implementing the new endpoint
+1. `Undo` any changes suggested by Copilot
 
 #### Exercise
-
-#### Follow-up
-1. Given what we learned earlier, which feature might be a better fit for this type of information in the future?
+Using custom instructions, modify Copilot's behavior such that Copilot appropriately creates, tests and validates a new API endpoint when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`).
 
 <details>
+<summary>SOLUTION</summary>
 
-ANSWER: Prompt files
+Add something similar to the following line to `.github/copilot-instructions.md`:
+- `When creating a new API endpoint, always test it using MockMvc.`
+<!-- - Ensure all endpoints are protected by authentication and authorization
+- Validate all user inputs and sanitize data
+- Implement rate limiting and throttling
+- Implement logging and monitoring for security events -->
 </details>
 
+#### Follow-up
+Q: Given what we learned earlier, which feature might be a better fit for this type of information in the future?
+
+<details>
+<summary>ANSWER</summary>
+Prompt files
+</details>
+
+<!-- Q: What other approaches could we take with custom instructions to achieve the same task in a different way? A: TDD -->
+<!-- Q: What other best practices can be applied to this exercise to further enhance the results we get from Copilot? A: We can be more descriptive in the actual prompt we type. -->
 
 ### Challenge #2
 #### Set-up
 1. Open Copilot Chat
 1. Switch to `Agent` mode in Copilot Chat
 1. Ask Copilot to `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I'm looking to fix any vulnerabilities I can find.`
-
-What do you notice about `Agent` mode's behavior? Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
-
-1. Stop Copilot if necessary and Undo any suggested changes
+   - Q: What do you notice about `Agent` mode's behavior? Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
+1. Stop Copilot if necessary and `Undo` any suggested changes
 
 #### Exercise
 Using custom instructions, modify Copilot's behavior such that Copilot does not make any changes to your code, using that same prompt (i.e., `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I'm looking to fix any vulnerabilities I can find.`).
 
+<details>
+<summary>SOLUTION</summary>
+
+Add something similar to the following line to `.github/copilot-instructions.md`:
+- `Do not make any code changes without first asking permission. You need explicitly approval before modifying any code in this repository.`
+</details>
+
+
 #### Follow-up
-Take a minute to explore the [awesome-copilot](https://github.com/github/awesome-copilot) repo. What stands out? What do you notice about the types of custom instructions (and other customization options) share there? What ideas does awesome-copilot give you about how you can supercharge your own project's custom instructions approach?
+Take a minute to explore the [awesome-copilot](https://github.com/github/awesome-copilot) repo. What stands out? What do you notice about the types of custom instructions (and other customization options) shared there? What ideas does awesome-copilot give you about how you can supercharge your own project's custom instructions approach?
 
 ### Challenge #3
 #### Background
@@ -52,7 +69,7 @@ You work at XYZ Company. At XYZ, there are common standards and expectations tha
 1. Switch to `Edit` mode for Copilot Chat
 1. Ask Copilot `Can you generate a markdown file documenting ___?`
 1. Observe the changes suggested by `Edit` mode. Do not accept them.
-1. Undo the suggested changes
+1. `Undo` the suggested changes
 
 #### Exercise
 Using custom instructions, modify Copilot's behavior such that the same prompt (i.e., `Can you generate a markdown file documenting ___?`), generates a do
