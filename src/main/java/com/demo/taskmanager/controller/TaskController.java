@@ -170,4 +170,32 @@ public class TaskController {
         List<Task> tasks = taskService.getHighPriorityIncompleteTasks();
         return ResponseEntity.ok(tasks);
     }
+    
+    /**
+     * Get task details as HTML
+     * This endpoint returns HTML content
+     */
+    @GetMapping("/{id}/details-html")
+    public ResponseEntity<String> getTaskDetailsAsHtml(@PathVariable Long id) {
+        Optional<Task> taskOpt = taskService.getTask(id);
+        if (taskOpt.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        
+        Task task = taskOpt.get();
+
+        String html = "<html><body>" +
+                     "<h1>Task Details</h1>" +
+                     "<h2>Title: " + task.getTitle() + "</h2>" +
+                     "<p>Description: " + task.getDescription() + "</p>" +
+                     "<p>Priority: " + task.getPriority() + "</p>" +
+                     "<p>Category: " + task.getCategory() + "</p>" +
+                     "<p>Due Date: " + task.getDueDate() + "</p>" +
+                     "<p>Completed: " + task.getCompleted() + "</p>" +
+                     "</body></html>";
+        
+        return ResponseEntity.ok()
+                .header("Content-Type", "text/html")
+                .body(html);
+    }
 }

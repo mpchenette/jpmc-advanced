@@ -62,3 +62,5 @@ mvnw.cmd
 
 # Spring Boot DevTools restart file
 .reloadtrigger
+
+.vscode/

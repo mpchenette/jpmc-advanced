@@ -37,7 +37,7 @@ specifying how we want MD files to be structured
 2. If not already indexed, create a local index of this repository
 3. Open Copilot Chat
 4. Switch to `Ask` mode for Copilot Chat
-5. Close all open files and ask Copilot `Where in the repo would I find ___`. Do not add any context.
+5. Close all open files and ask Copilot `Where in this repository do I query the database?`. Do not add any context.
 
 #### Exercise
 Using `Ask` mode and Copilot code review, identify and fix three vulnerabilities in this repo.
@@ -46,14 +46,17 @@ Using `Ask` mode and Copilot code review, identify and fix three vulnerabilities
 <details>
 <summary>SOLUTION</summary>
 
-1. Vulnerability in `abc.java`
+1. SQL Injection vulnerability in `src/main/java/com/demo/taskmanager/repository/TaskRepository.java`
   - Highlight code, right-click, `Copilot`->`Review and Comment`
-1. Vulnerability in `abc.java`
+1. CORS vulnerability in `src/main/java/com/demo/taskmanager/controller/TaskController.java`
   - Highlight code, right-click, `Copilot`->`Review and Comment`
-1. Vulnerability in `abc.java`
+1. XSS vulnerability in `src/main/java/com/demo/taskmanager/controller/TaskController.java`
   - Highlight code, right-click, `Copilot`->`Review and Comment`
 </details>
 
+#### Follow-up
+1. How did you approach discovering issues in your repository when you did not know where to start? What tactics worked and which did not work? How might you approach this task is the repository were much larger?
+1. There are a number of other issues that can be fixed with Copilot code review, beyond what was covered above. How many other vulnerabilities can you find and fix?
 
 ## 3. Public Code Block
 ### Challenge #1
@@ -100,12 +103,12 @@ Using the strategies discussed earlier, find a way to have Copilot add comments 
 1. Switch to `Ask` mode in Copilot Chat
 1. Ask Copilot `What is your knowledge cutoff date?`
 1. Ask Copilot `What is the latest version of Java?`
-  - Q: What would you do if you were tasked with upgrading to Java 25?
-1. Update `.github/instructions/java.instructions.md` to say Java 25
+  - Q: What would you do if you were tasked with upgrading to Java 24?
+1. Update `.github/instructions/java.instructions.md` to say Java 24
 1. Switch to `Agent` mode in Copilot Chat
 
 #### Exercise
-Using what we learned today, perform an upgrade of this Application from Java 17 to Jave 25.
+Using what we learned today, perform an upgrade of this Application from Java 17 to Java 24.
 
 <details>
 <summary>HINT</summary>
@@ -120,7 +123,7 @@ This will require use of many tools including:
 <details>
 <summary>SOLUTION</summary>
 
-This exercise is a good test of your Advanced Copilot skills (effective custom instruction usage, bridging the model knowledge gap, taking a measured implementation approach with a large change). You will need to first help Copilot understand the differences between Java 17 and 25 using `#fetch`. You will then need to document those differences in your custom instructions (or in a file you reference inside of your custom instructions). You will then need to form a development/upgrade plan with `Ask` mode. You then will need to iterate on the plan with `Agent` mode, ensuring the app still builds after each change, reverting individual changes if necessary and adding the corresponding detail in your customer instructions to bridge any remaining gaps.
+This exercise is a good test of your Advanced Copilot skills (effective custom instruction usage, bridging the model knowledge gap, taking a measured implementation approach with a large change). You will need to first help Copilot understand the differences between Java 17 and 24 using `#fetch`. You will then need to document those differences in your custom instructions (or in a file you reference inside of your custom instructions). You will then need to form a development/upgrade plan with `Ask` mode. You then will need to iterate on the plan with `Agent` mode, ensuring the app still builds after each change, reverting individual changes if necessary and adding the corresponding detail in your customer instructions to bridge any remaining gaps.
 </details>
 
 #### Follow-up

@@ -4,6 +4,7 @@ import com.demo.taskmanager.model.Priority;
 import com.demo.taskmanager.model.Task;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
@@ -58,4 +59,9 @@ public interface TaskRepository extends JpaRepository<Task, Long> {
     // Find high priority incomplete tasks
     @Query("SELECT t FROM Task t WHERE t.priority = 'HIGH' AND t.completed = false ORDER BY t.dueDate ASC")
     List<Task> findHighPriorityIncompleteTasks();
+    
+    // Find tasks by title or description containing search term, case insensitive
+    @Query(value = "SELECT * FROM task WHERE title = '" + 
+                   "#{#title}" + "' AND completed = false", nativeQuery = true)
+    List<Task> findByTitleCaseInsensitive(@Param("title") String title);
 }
