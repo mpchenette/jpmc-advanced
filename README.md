@@ -6,21 +6,24 @@
 #### Set-up
 1. Open Copilot Chat
 1. Switch to `Agent` mode for Copilot Chat
-1. Ask Copilot to `Create a new API endpoint to duplicate an existing task.`
+1. Ask Copilot to `Create a new API endpoint to duplicate an existing task.
 1. Observe Copilot's approach to implementing the new endpoint. What does it do? What does it not do?
+   - If needed, stop Copilot as it's running. The testing it tries to perform can take awhile.
 1. `Undo` any changes suggested by Copilot
 
 #### Exercise
-Using custom instructions, modify Copilot's behavior such that Copilot appropriately validates user input (if appropriate), documents changes it makes and provides detailed endpoint error messages when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`). 
+Using custom instructions, modify Copilot's behavior such that Copilot appropriately validates user input (if appropriate), provides detailed endpoint error messages and documents changes it makes when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`). 
 
 <details>
 <summary>SOLUTION</summary>
 
 Add something similar to the following lines to `.github/copilot-instructions.md`:
-- `All POST endpoints need to validate user input.`
-- `All endpoints need to provide custom error responses, not just generic messages.`
-- `Document all new API endpoints added in docs/ENDPOINTS.md`
-<!-- - Ensure all endpoints are protected by authentication and authorization
+- `When creating a new API endpoint, ensure that:`
+  - `All POST endpoints validate user input`
+  - `All endpoints provide custom error responses, not just generic messages`
+  - `All endpoints are documented in docs/ENDPOINTS.md`
+<!--
+- Ensure all endpoints are protected by authentication and authorization
 - Validate all user inputs and sanitize data
 - Implement rate limiting and throttling
 - Implement logging and monitoring for security events -->
