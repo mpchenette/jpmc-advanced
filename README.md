@@ -11,13 +11,15 @@
 1. `Undo` any changes suggested by Copilot
 
 #### Exercise
-Using custom instructions, modify Copilot's behavior such that Copilot appropriately creates, tests and validates a new API endpoint when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`).
+Using custom instructions, modify Copilot's behavior such that Copilot appropriately validates user input (if appropriate), documents changes it makes and provides detailed endpoint error messages when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`). 
 
 <details>
 <summary>SOLUTION</summary>
 
-Add something similar to the following line to `.github/copilot-instructions.md`:
-- `When creating a new API endpoint, always test it using MockMvc.`
+Add something similar to the following lines to `.github/copilot-instructions.md`:
+- `All POST endpoints need to validate user input.`
+- `All endpoints need to provide custom error responses, not just generic messages.`
+- `Document all new API endpoints added in docs/ENDPOINTS.md`
 <!-- - Ensure all endpoints are protected by authentication and authorization
 - Validate all user inputs and sanitize data
 - Implement rate limiting and throttling
