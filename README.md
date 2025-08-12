@@ -22,11 +22,6 @@ Add something similar to the following lines to `.github/copilot-instructions.md
   - `All POST endpoints validate user input`
   - `All endpoints provide custom error responses, not just generic messages`
   - `All endpoints are documented in docs/ENDPOINTS.md`
-<!--
-- Ensure all endpoints are protected by authentication and authorization
-- Validate all user inputs and sanitize data
-- Implement rate limiting and throttling
-- Implement logging and monitoring for security events -->
 </details>
 
 #### Follow-up
