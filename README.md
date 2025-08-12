@@ -25,10 +25,50 @@ ANSWER: Prompt files
 
 
 ### Challenge #2
-use Mermaid?
+#### Set-up
+1. Open Copilot Chat
+1. Switch to `Agent` mode in Copilot Chat
+1. Ask Copilot to `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I'm looking to fix any vulnerabilities I can find.`
+
+What do you notice about `Agent` mode's behavior? Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
+
+1. Stop Copilot if necessary and Undo any suggested changes
+
+#### Exercise
+Using custom instructions, modify Copilot's behavior such that Copilot does not make any changes to your code, using that same prompt (i.e., `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I'm looking to fix any vulnerabilities I can find.`).
+
+#### Follow-up
+Take a minute to explore the [awesome-copilot](https://github.com/github/awesome-copilot) repo. What stands out? What do you notice about the types of custom instructions (and other customization options) share there? What ideas does awesome-copilot give you about how you can supercharge your own project's custom instructions approach?
 
 ### Challenge #3
-specifying how we want MD files to be structured
+#### Background
+You work at XYZ Company. At XYZ, there are common standards and expectations that all documentation changes are held to. These standards include:
+- All new additions to a document are sectioned off with labels highlighting who made the change
+- There is a required field at the top of every document outlining when the document was last updated
+- Any changes to existing document content must provide a WHAT/WHY label below the change outlining what the change was and why it was necessary
+
+#### Set-up
+1. Open Copilot Chat
+1. Switch to `Edit` mode for Copilot Chat
+1. Ask Copilot `Can you generate a markdown file documenting ___?`
+1. Observe the changes suggested by `Edit` mode. Do not accept them.
+1. Undo the suggested changes
+
+#### Exercise
+Using custom instructions, modify Copilot's behavior such that the same prompt (i.e., `Can you generate a markdown file documenting ___?`), generates a do
+
+<details>
+<summary>SOLUTION</summary>
+
+Add the following lines to `.github/copilot-instructions.md`:
+- `Add and maintain a "LAST UPDATED:" line to the beginning of any documentation you create or update. This line should specify the date a change is made.`
+- `Any net new additions to documentation needs to be contained in a block comment (or similar separator) with a label at the top and bottom of said comment or separator outlining the current user's name and handle.`
+- `Any changes to existing documentation must include a "WHAT/WHY:" label immediately below any changes outlining what change is being made and why it is needed.`
+</details>
+
+
+#### Follow-up
+Which type of custom instruction file did you use? Why? Would you have been able to achieve the same result with the other type of custom instruction file? What would use of the other custom instruction file type have looked like?
 
 ## 2. Workspace Knowledge + Copilot Code Review
 ### Challenge #1
