@@ -1,206 +1,61 @@
-# Task Management API
-
-A comprehensive task management REST API built with Java, Maven and Spring Boot.
-
-## Features
-
-- ✅ **Task Management**: Create, read, update, and delete tasks
-- 🎯 **Priority System**: Assign LOW, MEDIUM, or HIGH priority to tasks
-- 📂 **Categories**: Organize tasks into categories (Work, Personal, etc.)
-- ⏰ **Due Date Tracking**: Set and monitor task due dates
-- 🔍 **Search & Filter**: Find tasks by title, description, priority, or category
-- 📊 **Statistics**: Get completion rates and task analytics
-- ⚡ **Zero Configuration**: H2 in-memory database requires no setup
-
-## Quick Start
-
-### Prerequisites - MUST ALREADY BE INSTALLED IN ORDER TO WORK
-- Java 17+
-- Maven 3.6+
-
-### Running the Application
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd jpmc-advanced
-```
-
-2. Run the application:
-```bash
-mvn spring-boot:run
-```
-
-3. Access the API at `http://localhost:8080/api/tasks`
-
-## API Endpoints
-
-### Task Operations
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/tasks` | Get all tasks |
-| GET | `/api/tasks/{id}` | Get task by ID |
-| POST | `/api/tasks` | Create new task |
-| PUT | `/api/tasks/{id}` | Update existing task |
-| PUT | `/api/tasks/{id}/complete` | Mark task as completed |
-| DELETE | `/api/tasks/{id}` | Delete task |
-
-### Filtering & Search
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/tasks/status/{completed}` | Get tasks by completion status |
-| GET | `/api/tasks/priority/{priority}` | Get tasks by priority (LOW/MEDIUM/HIGH) |
-| GET | `/api/tasks/category/{category}` | Get tasks by category |
-| GET | `/api/tasks/search?query={term}` | Search tasks by title or description |
-| GET | `/api/tasks/overdue` | Get overdue tasks |
-| GET | `/api/tasks/due-today` | Get tasks due today |
-| GET | `/api/tasks/sorted-by-priority` | Get all tasks sorted by priority |
-| GET | `/api/tasks/high-priority-incomplete` | Get high priority incomplete tasks |
-
-### Analytics
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/api/tasks/statistics` | Get task completion statistics |
-
-## Task Model
-
-```json
-{
-  "id": 1,
-  "title": "Complete project documentation",
-  "description": "Write comprehensive README and API documentation",
-  "completed": false,
-  "createdDate": "2025-08-11T10:30:00",
-  "dueDate": "2025-08-15T17:00:00",
-  "priority": "HIGH",
-  "category": "Work"
-}
-```
-
-## Example API Calls
-
-### Create a Task
-```bash
-curl -X POST http://localhost:8080/api/tasks \
-  -H "Content-Type: application/json" \
-  -d '{
-    "title": "Learn Spring Boot",
-    "description": "Complete Spring Boot tutorial",
-    "priority": "MEDIUM",
-    "category": "Learning",
-    "dueDate": "2025-08-20T17:00:00"
-  }'
-```
-
-### Get All Tasks
-```bash
-curl http://localhost:8080/api/tasks
-```
-
-### Search Tasks
-```bash
-curl "http://localhost:8080/api/tasks/search?query=Spring"
-```
-
-### Get High Priority Tasks
-```bash
-curl http://localhost:8080/api/tasks/priority/HIGH
-```
-
-### Mark Task as Completed
-```bash
-curl -X PUT http://localhost:8080/api/tasks/1/complete
-```
-
-### Get Task Statistics
-```bash
-curl http://localhost:8080/api/tasks/statistics
-```
-
-## Sample Response - Task Statistics
-```json
-{
-  "totalTasks": 10,
-  "completedTasks": 6,
-  "pendingTasks": 4,
-  "overdueTasks": 1,
-  "completionRate": 60.0
-}
-```
-
-## Priority Levels
-
-- **LOW**: Basic tasks, can be done when time permits
-- **MEDIUM**: Standard priority tasks (default)
-- **HIGH**: Urgent tasks that need immediate attention
-
-## Development
-
-### Project Structure
-```
-src/main/java/com/demo/taskmanager/
-├── TaskManagerApplication.java    # Main Spring Boot application
-├── controller/
-│   └── TaskController.java        # REST API endpoints
-├── model/
-│   ├── Task.java                  # Task entity
-│   └── Priority.java              # Priority enum
-├── repository/
-│   └── TaskRepository.java        # Data access layer
-└── service/
-    └── TaskService.java           # Business logic
-```
-
-### Running Tests
-```bash
-mvn test
-```
-
-### Building the Application
-```bash
-mvn clean package
-java -jar target/task-manager-0.0.1-SNAPSHOT.jar
-```
-
-## GitHub Copilot Demo Features
-
-This project demonstrates several GitHub Copilot capabilities:
-
-1. **Code Completion**: Auto-complete method signatures and boilerplate code
-2. **Pattern Recognition**: REST endpoint patterns and JPA repository methods
-3. **Code Generation**: Generate entire methods from comments
-4. **Test Generation**: Automatically create comprehensive test cases
-5. **Documentation**: Generate JavaDoc and API documentation
-6. **Best Practices**: Follow Spring Boot and Java best practices
-
-## Technologies Used
-
-- **Spring Boot 3.1.2**: Application framework
-- **Spring Data JPA**: Data persistence
-- **H2 Database**: In-memory database (zero configuration)
-- **Maven**: Build tool
-- **JUnit 5**: Testing framework
-- **Mockito**: Mocking framework
-- **Java 17**: Programming language
-
-## Data Persistence
-
-The application uses an embedded database that automatically initializes when the application starts. All data is stored in memory during runtime, making it perfect for development and testing without requiring any database setup or configuration.
-
-## Contributing
-
-This project is designed for educational purposes to demonstrate GitHub Copilot capabilities. Feel free to explore, modify, and extend the functionality!
-
-## License
-
-This project is open source and available under the [MIT License](LICENSE).
-
+> For information on the app used in this lab, see [ABOUT_THE_APP.md](docs/ABOUT_THE_APP.md)
 
 # Hands-on Exercises
-## 2. Public Code Block
+## 1. Copilot Customization
+### Challenge #1
+#### Set-up
+1. Navigate to ``
+2. Open Copilot Chat
+3. Switch to `Agent` mode for Copilot Chat
+``` md
+Controllers must accept Spring Data Pageable and return Page<DTO>. 
+Never return entities from controllers; use TaskDto + MapStruct mapper.
+Always support sort via `sort` query parameter.
+```
+
+#### Exercise
+
+#### Follow-up
+1. Given what we learned earlier, which feature might be a better fit for this type of information in the future?
+
+<details>
+
+ANSWER: Prompt files
+</details>
+
+
+### Challenge #2
+use Mermaid?
+
+### Challenge #3
+specifying how we want MD files to be structured
+
+## 2. Workspace Knowledge + Copilot Code Review
+### Challenge #1
+#### Set-up
+1. Click on the Copilot icon at the bottom right of the VS Code window
+2. If not already indexed, create a local index of this repository
+3. Open Copilot Chat
+4. Switch to `Ask` mode for Copilot Chat
+5. Close all open files and ask Copilot `Where in the repo would I find ___`. Do not add any context.
+
+#### Exercise
+Using `Ask` mode and Copilot code review, identify and fix three vulnerabilities in this repo.
+> Tip: If you're having a hard time finding vulnerabilities, utilize the `#codebase` reference to further inform Copilot of the files in this repository
+
+<details>
+<summary>SOLUTION</summary>
+
+1. Vulnerability in `abc.java`
+  - Highlight code, right-click, `Copilot`->`Review and Comment`
+1. Vulnerability in `abc.java`
+  - Highlight code, right-click, `Copilot`->`Review and Comment`
+1. Vulnerability in `abc.java`
+  - Highlight code, right-click, `Copilot`->`Review and Comment`
+</details>
+
+
+## 3. Public Code Block
 ### Challenge #1
 #### Set-up
 1. Open Copilot Chat
@@ -219,6 +74,7 @@ Using the strategies discussed earlier, find a way to have Copilot show you the 
 ### Challenge #2
 #### Set-up
 1. Navigate to `/src/main/java/com/demo/taskmanager/util/StringUtil.java`
+2. Open Copilot Chat
 2. Switch to `Ask` mode for Copilot Chat
 3. Include `StringUtil.java` as context
 4. Ask Copilot `Can you add comments to #file:StringUtil.java ? Do not edit existing comments.`
@@ -236,3 +92,38 @@ Using the strategies discussed earlier, find a way to have Copilot add comments 
 - `Can you add comments to #file:StringUtil.java ? Do not edit existing comments. Please show each comment you intend to add in it's own code block. Include the line below the function in each code block. Do not show the complete function.`
   - `StringUtil.java:13-43`
 </details>
+
+## 4. Knowledge cutoff + Application upgrades
+### Challenge #1
+#### Set-up
+1. Open Copilot Chat
+1. Switch to `Ask` mode in Copilot Chat
+1. Ask Copilot `What is your knowledge cutoff date?`
+1. Ask Copilot `What is the latest version of Java?`
+  - Q: What would you do if you were tasked with upgrading to Java 25?
+1. Update `.github/instructions/java.instructions.md` to say Java 25
+1. Switch to `Agent` mode in Copilot Chat
+
+#### Exercise
+Using what we learned today, perform an upgrade of this Application from Java 17 to Jave 25.
+
+<details>
+<summary>HINT</summary>
+
+This will require use of many tools including:
+- `#fetch`
+- Ask mode
+- Agent mode
+- Custom instructions
+</details>
+
+<details>
+<summary>SOLUTION</summary>
+
+This exercise is a good test of your Advanced Copilot skills (effective custom instruction usage, bridging the model knowledge gap, taking a measured implementation approach with a large change). You will need to first help Copilot understand the differences between Java 17 and 25 using `#fetch`. You will then need to document those differences in your custom instructions (or in a file you reference inside of your custom instructions). You will then need to form a development/upgrade plan with `Ask` mode. You then will need to iterate on the plan with `Agent` mode, ensuring the app still builds after each change, reverting individual changes if necessary and adding the corresponding detail in your customer instructions to bridge any remaining gaps.
+</details>
+
+#### Follow-up
+Q: Which feature did we discuss today that would be a better fit for application upgrades in the future?
+
+<details><summary>Answer</summary>The Java (or .NET) Upgrade Agent</details>
