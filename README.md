@@ -2,49 +2,17 @@
 
 # Hands-on Exercises
 ## 1. Copilot Customization
-### Challenge #1
+
+### Challenge 1.1
 #### Set-up
 1. Open Copilot Chat
 1. Switch to `Agent` mode for Copilot Chat
-1. Ask Copilot to `Create a new API endpoint to duplicate an existing task.
-1. Observe Copilot's approach to implementing the new endpoint. What does it do? What does it not do?
-   - If needed, stop Copilot as it's running. The testing it tries to perform can take awhile.
-1. `Undo` any changes suggested by Copilot
-
-#### Exercise
-Using custom instructions, modify Copilot's behavior such that Copilot appropriately validates user input (if appropriate), provides detailed endpoint error messages and documents changes it makes when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`). 
-
-<details>
-<summary>SOLUTION</summary>
-
-Add something similar to the following lines to `.github/copilot-instructions.md`:
-- `When creating a new API endpoint, ensure that:`
-  - `All POST endpoints validate user input`
-  - `All endpoints provide custom error responses, not just generic messages`
-  - `All endpoints are documented in docs/ENDPOINTS.md`
-</details>
-
-#### Follow-up
-Q: Given what we learned today, which feature might be a better fit for this type of task in the future?
-
-<details>
-<summary>ANSWER</summary>
-<a href="https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental">Prompt files</a>
-</details>
-
-<!-- Q: What other approaches could we take with custom instructions to achieve the same task in a different way? A: TDD -->
-<!-- Q: What other best practices can be applied to this exercise to further enhance the results we get from Copilot? A: We can be more descriptive in the actual prompt we type. -->
-
-### Challenge #2
-#### Set-up
-1. Open Copilot Chat
-1. Switch to `Agent` mode for Copilot Chat
-1. Ask Copilot to `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I'm looking to fix any vulnerabilities I can find.`
-   - Q: What do you notice about `Agent` mode's behavior? Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
+1. Ask Copilot to `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I need to fix any vulnerabilities I can find.`
+   - Q: What do you notice about `Agent` mode's behavior? Is it making changes to your code? Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
 1. Stop Copilot if necessary and `Undo` any suggested changes
 
 #### Exercise
-Using custom instructions, modify Copilot's behavior such that Copilot does not make any changes to your code, using that same prompt (i.e., `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I'm looking to fix any vulnerabilities I can find.`).
+Using custom instructions, modify Copilot's behavior such that Copilot does not make any changes to your code, using that same prompt (i.e., `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I need to fix any vulnerabilities I can find.`).
 
 <details>
 <summary>SOLUTION</summary>
@@ -56,7 +24,7 @@ Add something similar to the following line to `.github/copilot-instructions.md`
 #### Follow-up
 Take a minute to explore the [awesome-copilot](https://github.com/github/awesome-copilot) repo. What stands out? What do you notice about the types of custom instructions (and other customization options) shared there? What ideas does awesome-copilot give you about how you can supercharge your own project's custom instructions approach?
 
-### Challenge #3
+### Challenge 1.2
 #### Background
 You work at XYZ Company. At XYZ, there are common standards and expectations that all documentation changes are held to. These standards include:
 - All new additions to a document are sectioned off with labels highlighting who made the change
@@ -85,8 +53,42 @@ Add the following lines to `.github/copilot-instructions.md`:
 #### Follow-up
 Which type of custom instruction file did you use? Why? Would you have been able to achieve the same result with the other type of custom instruction file? What would use of the other custom instruction file type have looked like?
 
+### Challenge 1.3
+#### Set-up
+1. Open Copilot Chat
+1. Switch to `Agent` mode for Copilot Chat
+1. Ask Copilot to `Create a new API endpoint to duplicate an existing task.`
+1. Observe Copilot's approach to implementing the new endpoint.
+   - What does it do? What does it not do?
+     - Does it write unit tests?
+     - Does it write documentation?
+     - What types of error messages does it include for the new endpoint?
+   - If needed, stop Copilot as it's running. The testing it tries to perform can take awhile.
+1. `Undo` any changes suggested by Copilot
+
+#### Exercise
+Using custom instructions, modify Copilot's behavior such that Copilot appropriately validates user input (if appropriate), provides detailed endpoint error messages and documents changes it makes when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`). 
+
+<details>
+<summary>SOLUTION</summary>
+
+Add something similar to the following lines to `.github/copilot-instructions.md`:
+- `When creating a new API endpoint, ensure that:`
+  - `All POST endpoints validate user input`
+  - `All endpoints provide custom error responses, not just generic messages`
+  - `All endpoints are documented in docs/ENDPOINTS.md`
+</details>
+
+#### Follow-up
+Q: Given what we learned today, which feature might be a better fit for this type of task in the future, and why?
+
+<details>
+<summary>ANSWER</summary>
+<a href="https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental">Prompt files</a> because it's highly likely that other devs will create new API endpoints in the future, and we want a reusable prompt to standardize that process.
+</details>
+
 ## 2. Workspace knowledge + Copilot code review
-### Challenge #1
+### Challenge 2.1
 #### Set-up
 1. Click on the Copilot icon at the bottom right of the VS Code window
 2. If not already indexed, create a local index of this repository
@@ -114,7 +116,7 @@ Using `Ask` mode and Copilot code review, identify and fix three vulnerabilities
 1. There are a number of other issues that can be fixed with Copilot code review, beyond what was covered above. How many other vulnerabilities can you find and fix?
 
 ## 3. Public Code Block
-### Challenge #1
+### Challenge 3.1
 #### Set-up
 1. Open Copilot Chat
 2. Switch to `Ask` mode for Copilot Chat
@@ -129,7 +131,7 @@ Using the strategies discussed earlier, find a way to have Copilot show you the 
 - `Can you show me how a quick sort algorithm works? I want to understand the logic better. Just show me pseudocode.`
 </details>
 
-### Challenge #2
+### Challenge 3.2
 #### Set-up
 1. Navigate to `/src/main/java/com/demo/taskmanager/util/StringUtil.java`
 2. Open Copilot Chat
@@ -152,7 +154,7 @@ Using the strategies discussed earlier, find a way to have Copilot add comments 
 </details>
 
 ## 4. Knowledge cutoff + Application upgrades
-### Challenge #1
+### Challenge 4.1
 #### Set-up
 1. Open Copilot Chat
 1. Switch to `Ask` mode in Copilot Chat
@@ -168,8 +170,8 @@ Using what we learned today, perform an upgrade of this Application from Java 17
 <details>
 <summary>HINT</summary>
 
-This will require use of many tools including:
-- `#fetch`
+This may require use of many tools including:
+- `#fetch` (only available in VS Code)
 - Ask mode
 - Agent mode
 - Custom instructions
