@@ -2,14 +2,18 @@
 
 # Hands-on Exercises
 ## 1. Copilot Customization
-
 ### Challenge 1.1
 #### Set-up
+This set-up step is intended to showcase how Copilot behaves without use of custom instructions.
+
 1. Open Copilot Chat
-1. Switch to `Agent` mode for Copilot Chat
-1. Ask Copilot to `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I need to fix any vulnerabilities I can find.`
-   - Q: What do you notice about `Agent` mode's behavior? Is it making changes to your code? Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
+1. Switch to `Agent` mode
+1. Ask Copilot `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I need to fix any vulnerabilities I can find.`
+   - What do you notice about `Agent` mode's behavior?
+   - Is it making changes to your code?
+   - Why might this be a problem if I'm attempting to resolve vulnerabilities in my codebase?
 1. Stop Copilot if necessary and `Undo` any suggested changes
+1. Start a new Copilot Chat
 
 #### Exercise
 Using custom instructions, modify Copilot's behavior such that Copilot does not make any changes to your code, using that same prompt (i.e., `Can you help me find vulnerabilities in my repository? I've been assigned with stabilizing our codebase this sprint and I need to fix any vulnerabilities I can find.`).
@@ -35,8 +39,9 @@ You work at XYZ Company. At XYZ, there are common standards and expectations tha
 1. Open Copilot Chat
 1. Switch to `Agent` mode for Copilot Chat
 1. Ask Copilot `Can you modify #file:ABOUT_THE_APP.md to add a more robust description about what this project is? Can you also add a new section: "Future Enhancements" outlining things that should be worked on soon?`
-1. Observe the changes suggested by `Edit` mode. Do not accept them.
+1. Observe the changes suggested by `Agent` mode. Do not accept them.
 1. `Undo` the suggested changes
+1. Start a new Copilot Chat
 
 #### Exercise
 Using custom instructions, modify Copilot's behavior such that the same prompt (i.e., `Can you modify #file:ABOUT_THE_APP.md to add a more robust description about what this project is? Can you also add a new section: "Future Enhancements" outlining things that should be worked on soon?`), follows the standards outlined above.
@@ -65,6 +70,7 @@ Which type of custom instruction file did you use? Why? Would you have been able
      - What types of error messages does it include for the new endpoint?
    - If needed, stop Copilot as it's running. The testing it tries to perform can take awhile.
 1. `Undo` any changes suggested by Copilot
+1. Start a new Copilot Chat
 
 #### Exercise
 Using custom instructions, modify Copilot's behavior such that Copilot appropriately validates user input (if appropriate), provides detailed endpoint error messages and documents changes it makes when using the same prompt (i.e., `Create a new API endpoint to duplicate an existing task.`). 
@@ -95,6 +101,7 @@ Q: Given what we learned today, which feature might be a better fit for this typ
 3. Open Copilot Chat
 4. Switch to `Ask` mode for Copilot Chat
 5. Close all open files and ask Copilot `Where in this repository do I query the database?`. Do not add any context.
+1. Start a new Copilot Chat
 
 #### Exercise
 Using `Ask` mode and Copilot code review, identify and fix three vulnerabilities in this repo.
@@ -121,6 +128,7 @@ Using `Ask` mode and Copilot code review, identify and fix three vulnerabilities
 1. Open Copilot Chat
 2. Switch to `Ask` mode for Copilot Chat
 3. Ask Copilot `Can you show me how a quick sort algorithm works? I want to understand the logic better.`
+1. Start a new Copilot Chat
 
 #### Exercise
 Using the strategies discussed earlier, find a way to have Copilot show you the logic to a quick sort function without having the response blocked.
@@ -138,6 +146,7 @@ Using the strategies discussed earlier, find a way to have Copilot show you the 
 2. Switch to `Ask` mode for Copilot Chat
 3. Include `StringUtil.java` as context
 4. Ask Copilot `Can you add comments to #file:StringUtil.java ? Do not edit existing comments.`
+1. Start a new Copilot Chat
 
 #### Exercise
 Using the strategies discussed earlier, find a way to have Copilot add comments to your function without having the response blocked.
@@ -163,6 +172,7 @@ Using the strategies discussed earlier, find a way to have Copilot add comments 
   - Q: What would you do if you were tasked with upgrading to Java 24?
 1. Update `.github/instructions/java.instructions.md` to say Java 24
 1. Switch to `Agent` mode in Copilot Chat
+1. Start a new Copilot Chat
 
 #### Exercise
 Using what we learned today, perform an upgrade of this Application from Java 17 to Java 24.
